@@ -11,11 +11,17 @@
         "url": "https://jupe@github.com/jupe/csv-json.git"
     },
     "dependencies": {
-      "csv": "*"
+      "csv": ">=0.3.0"
     },
     "devDependencies": {
-        "csv": "*"
-        "chai": "*",
+        "csv": ">=0.3.0",
+        "mocha": "*",
+        "chai": "*"
+        
     },
-    "engines": { "node": ">=0.8.0" }
+    "license": "MIT",
+    "engines": { "node": ">=0.8.0" },
+    "scripts": {
+      "test": "mocha -R list test"
+    }
 }

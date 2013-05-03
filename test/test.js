@@ -5,13 +5,13 @@ var csvjs = require('../lib/csv-json');
 describe('csv-json', function() {
   it('csv-json parse', function() {
 
-    csvjs.parseCsv('./test.csv', function(error, json, stats){
+    csvjs.parseCsv('./test/test.csv', function(error, json, stats){
       assert.equal(error, null);
       assert.typeOf(json, 'Array');
     });
   });
-  it('csv-json parse', function() {
-    csvjs.parseCsv('./test.csv', function(error, json, stats){
+  it('csv-json parse and reorganize', function() {
+    csvjs.parseCsv('./test/test.csv', function(error, json, stats){
       assert.equal(error, null);
       json = csvjs.recJSON(json, 
         {
@@ -29,8 +29,8 @@ describe('csv-json', function() {
     });
   });
   
-  it('csv-json parse', function() {
-    csvjs.parseCsv('./test.csv',
+  it('csv-json parse with reorganize', function() {
+    csvjs.parseCsv('./test/test.csv',
         { //Rules:
           HEADER1: {path: 'test.h1'},
           HEADER2: {path: 'h2'},
