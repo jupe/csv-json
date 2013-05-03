@@ -4,7 +4,8 @@ csv-json
 csv file parser and reorganizer to user defined json object
 
 
-Usage:
+Usage
+------------
 ```
 /*
   test.csv:
@@ -32,3 +33,7 @@ csvjs.parseCsv('./test.csv',
   }
 });
 ```
+
+Installation
+------------
+  $ npm install csv-json
