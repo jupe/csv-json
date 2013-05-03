@@ -1,0 +1,21 @@
+{
+    "name": "csv-json",
+    "version": "0.0.1",
+    "description": "Node.js module for read csv file and reorganize it to json-object",
+    "preferGlobal": "true",
+    "main": "lib/csv-json.js",
+    "author": "Jussi Vatjus-Anttila",
+    "keywords": ["json", "csv"],
+    "repository" : {
+        "type": "git",
+        "url": "https://jupe@github.com/jupe/csv-json.git"
+    },
+    "dependencies": {
+      "csv": "*"
+    },
+    "devDependencies": {
+        "csv": "*"
+        "chai": "*",
+    },
+    "engines": { "node": ">=0.8.0" }
+}
