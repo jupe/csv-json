@@ -45,6 +45,3 @@ csvjs.parseCsv('./test.csv',
 });
 ```
 
-Installation
-------------
-  $ npm install csv-json
