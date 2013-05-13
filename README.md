@@ -6,6 +6,7 @@ csv file parser and reorganizer to user defined json object
 
 Usage
 ------------
+options parameter can omitted (default settings will be used, eg. csv delimeter is ',')
 ```
 /*
   test.csv:
@@ -20,7 +21,8 @@ csvjs.parseCsv('./test.csv',
     HEADER2: {path: 'h2'},
     HEADER3: {path: 'h3'},
     HEADER4: {path: 'test2.h4'}
-  }, function(error, json, stats){
+  },
+  function(error, json, stats){
     /* json:
     [ {
        test: {h1  'H1R0'},
@@ -30,6 +32,9 @@ csvjs.parseCsv('./test.csv',
       },
       ...
     */
+  },
+  { //Options:
+    delimiter : ','
   }
 });
 ```

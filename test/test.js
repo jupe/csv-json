@@ -4,12 +4,12 @@ var csvjs = require('../lib/csv-json');
 
 describe('csv-json', function() {
   it('csv-json parse', function() {
-
     csvjs.parseCsv('./test/test.csv', function(error, json, stats){
       assert.equal(error, null);
       assert.typeOf(json, 'Array');
     });
   });
+
   it('csv-json parse and reorganize', function() {
     csvjs.parseCsv('./test/test.csv', function(error, json, stats){
       assert.equal(error, null);
@@ -50,4 +50,40 @@ describe('csv-json', function() {
       }
     });
   });
+
+  it('csv-json parse ","-separated file with ; as delimiter', function () {
+    csvjs.parseCsv('./test/test2.csv', {options: {delimiter: ';' }}, function (error, json, stats) {
+      assert.equal(error, null);
+      assert.typeOf(json, 'Array');
+    });
+  });
+
+  it('csv-json parse with ; as delimiter', function () {
+    csvjs.parseCsv('./test/test2.csv', {options: {delimiter: ';' }}, function (error, json, stats) {
+      assert.equal(error, null);
+      assert.typeOf(json, 'Array');
+    });
+  });
+
+  it('csv-json parse and reorganize with options', function() {
+    csvjs.parseCsv('./test/test2.csv', {options: {delimiter: ';' }},
+        function(error, json, stats){
+          assert.equal(error, null);
+          json = csvjs.recJSON(json,
+              {
+                HEADER1: {path: 'test.h1'},
+                HEADER2: {path: 'h2'},
+                HEADER3: {path: 'h3'},
+                HEADER4: {path: 'test2.h4'}
+              });
+          assert.typeOf(json, 'Array');
+          assert.typeOf(json[0].test.h1, 'String');
+          assert.equal(json[0].test.h1, 'H1R1');
+          assert.equal(json[0].h2, 'H2R1');
+          assert.equal(json[0].h3, 'H3R1');
+          assert.equal(json[0].test2.h4, 'H4R1');
+        });
+  });
+
+
 });
