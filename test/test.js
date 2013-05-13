@@ -50,4 +50,19 @@ describe('csv-json', function() {
       }
     });
   });
+
+  it('csv-json parse with ; as delimiter', function () {
+    csvjs.parseCsv('./test/test2.csv', function (error, json, stats) {
+      assert.equal(error, null);
+      assert.typeOf(json, 'Array');
+    }, { delimiter : ';' });
+  });
+
+  it('csv-json parse ","-separated file with ; as delimiter', function () {
+    csvjs.parseCsv('./test/test.csv', function (error, json, stats) {
+      assert.isTrue(error != null);
+      assert.equal(json, null);
+    }, { delimiter : ';' });
+  });
+
 });
