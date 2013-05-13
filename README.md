@@ -3,6 +3,11 @@ csv-json
 
 csv file parser and reorganizer to user defined json object
 
+Installation
+------------
+
+npm install csv-json
+
 
 Usage
 ------------
@@ -16,11 +21,15 @@ options parameter can omitted (default settings will be used, eg. csv delimeter 
 */
 var csvjs = require('../lib/csv-json');
 csvjs.parseCsv('./test.csv',
-  { //Rules:
+  { rules: {
+    { //Rules:
     HEADER1: {path: 'test.h1'},
     HEADER2: {path: 'h2'},
     HEADER3: {path: 'h3'},
     HEADER4: {path: 'test2.h4'}
+  }},
+  options: { //Options:
+    delimiter : ','
   },
   function(error, json, stats){
     /* json:
@@ -32,9 +41,6 @@ csvjs.parseCsv('./test.csv',
       },
       ...
     */
-  },
-  { //Options:
-    delimiter : ','
   }
 });
 ```
