@@ -3,6 +3,8 @@ csv-json
 
 csv file parser and reorganizer to user defined json object
 
+[![Build Status](https://travis-ci.org/jupe/csv-json.png?branch=master)](https://travis-ci.org/jupe/csv-json)
+
 Installation
 ------------
 
