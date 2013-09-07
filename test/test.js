@@ -14,12 +14,12 @@ describe('csv-json', function() {
     csvjs.parseCsv('./test/test.csv', function(error, json, stats){
       assert.equal(error, null);
       json = csvjs.recJSON(json, 
-        {
+        { rules: {
           HEADER1: {path: 'test.h1'},
           HEADER2: {path: 'h2'},
           HEADER3: {path: 'h3'},
           HEADER4: {path: 'test2.h4'}
-        });
+        } });
       assert.typeOf(json, 'Array');
       assert.typeOf(json[0].test.h1, 'String');
       assert.equal(json[0].test.h1, 'H1R1');
@@ -31,12 +31,15 @@ describe('csv-json', function() {
   
   it('csv-json parse with reorganize', function() {
     csvjs.parseCsv('./test/test.csv',
-        { //Rules:
-          HEADER1: {path: 'test.h1'},
-          HEADER2: {path: 'h2'},
-          HEADER3: {path: 'h3'},
-          HEADER4: {path: 'test2.h4'}
+        { 
+          rules: {
+            HEADER1: {path: 'test.h1'},
+            HEADER2: {path: 'h2'},
+            HEADER3: {path: 'h3'},
+            HEADER4: {path: 'test2.h4'}
+          }
         }, function(error, json, stats){
+      //console.log(json);
       assert.equal(error, null);
       assert.typeOf(json, 'Array');
       for(var row=0;row<json.length;row++)
@@ -70,12 +73,13 @@ describe('csv-json', function() {
         function(error, json, stats){
           assert.equal(error, null);
           json = csvjs.recJSON(json,
-              {
-                HEADER1: {path: 'test.h1'},
-                HEADER2: {path: 'h2'},
-                HEADER3: {path: 'h3'},
-                HEADER4: {path: 'test2.h4'}
-              });
+              { rules: {
+                  HEADER1: {path: 'test.h1'},
+                  HEADER2: {path: 'h2'},
+                  HEADER3: {path: 'h3'},
+                  HEADER4: {path: 'test2.h4'}
+                }
+              } );
           assert.typeOf(json, 'Array');
           assert.typeOf(json[0].test.h1, 'String');
           assert.equal(json[0].test.h1, 'H1R1');

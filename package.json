@@ -1,9 +1,8 @@
 {
     "name": "csv-json",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "preferGlobal": false,
     "description": "Node.js module for read csv file and reorganize it to json-object",
-    "preferGlobal": "true",
     "main": "lib/csv-json.js",
     "author": "Jussi Vatjus-Anttila <jussiva@gmail.com>",
     "contributors": [ 

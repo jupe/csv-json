@@ -10,6 +10,10 @@ Installation
 
 npm install csv-json
 
+News:
+version: 0.1.0 - possible to put csv direct in string format
+                 Fix functionality
+
 
 Usage
 ------------
