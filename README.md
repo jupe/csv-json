@@ -1,9 +1,12 @@
-csv-json
+csv-json [![Build Status](https://travis-ci.org/jupe/csv-json.png?branch=master)](https://travis-ci.org/jupe/csv-json)
 ========
 
-csv file parser and reorganizer to user defined json object
+[![NPM](https://nodei.co/npm/csv-json.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/csv-json/)
 
-[![Build Status](https://travis-ci.org/jupe/csv-json.png?branch=master)](https://travis-ci.org/jupe/csv-json)
+[![NPM](https://nodei.co/npm-dl/csv-json.png)](https://nodei.co/npm/csv-json/)
+
+
+csv file parser and reorganizer to user defined json object
 
 Installation
 ------------
