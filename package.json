@@ -1,6 +1,6 @@
 {
     "name": "csv-json",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "preferGlobal": false,
     "description": "Node.js module for read csv file and reorganize it to json-object",
     "main": "lib/csv-json.js",
@@ -17,16 +17,15 @@
         "url": "https://github.com/jupe/csv-json.git"
     },
     "dependencies": {
-      "csv": ">=0.3.0"
+      "csv": "0.3.7"
     },
     "devDependencies": {
-        "csv": ">=0.3.0",
         "mocha": "*",
         "chai": "*"
         
     },
     "license": "MIT",
-    "engines": { "node": ">=0.8.0" },
+    "engines": { "node": ">=4.2.0" },
     "scripts": {
       "test": "mocha -R list test"
     }

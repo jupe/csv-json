@@ -8,15 +8,17 @@ csv-json [![Build Status](https://travis-ci.org/jupe/csv-json.png?branch=master)
 
 csv file parser and reorganizer to user defined json object
 
+|version|changes|
+|---------|---------|
+|0.1.1|keep working with new nodejs and stick with compatible csv|
+|0.1.0|possible to put csv direct in string format.  Fix functionality|
+
+
 Installation
 ------------
-
+```
 npm install csv-json
-
-News:
-version: 0.1.0 - possible to put csv direct in string format
-                 Fix functionality
-
+```
 
 Usage
 ------------
